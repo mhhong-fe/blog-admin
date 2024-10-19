@@ -1,5 +1,5 @@
 # 描述
-一个基于Vue3 + Vite的项目模版
+博客管理端
 
 # 特性
 
@@ -12,3 +12,7 @@
 -   🎨 [UnoCSS](https://github.com/unocss/unocss) - 高性能且极具灵活性的即时原子化 CSS 引擎
 
 -   使用 [新的 `<script setup>` 语法](https://github.com/vuejs/rfcs/pull/227)
+
+# 使用
+* 安装，`pnpm install`
+* 启动，`pnpm start`
