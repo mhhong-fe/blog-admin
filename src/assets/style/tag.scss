@@ -1,0 +1,11 @@
+#app {
+    .el-tag.el-tag--info {
+        --el-tag-text-color: #7A818D;
+        background: #EBEBEB;
+    }
+
+    .el-tag.el-tag--warning {
+        --el-tag-text-color: #EA7B08;
+        background-color: #FFEDD9;
+    }
+}

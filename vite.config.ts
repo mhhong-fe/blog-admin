@@ -32,13 +32,15 @@ export default defineConfig({
     resolve: {
         alias: {
             '@': fileURLToPath(new URL('./src', import.meta.url)),
+            '~': fileURLToPath(new URL('./src', import.meta.url)),
             'assets': fileURLToPath(new URL('./src/assets', import.meta.url)),
         },
     },
     server: {
+        port: 5001,
         proxy: {
             '/api': {
-                target: 'http://localhost:3000',
+                target: 'http://localhost:4000',
                 changeOrigin: true,
                 rewrite: path => path.replace(/^\/api/, ''), // 可选: 修改路径
             },

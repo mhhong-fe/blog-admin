@@ -9,7 +9,7 @@ export interface CommonResponseData<T = object> {
     pageDto?: {
         pageNum: number;
         pageSize: number;
-        count: number;
+        total: number;
     };
 }
 
@@ -22,15 +22,7 @@ export const axiosIns = axios.create({
 // 请求拦截
 axiosIns.interceptors.request.use((config) => {
     const modifiedConfig = { ...config };
-    // 统一增加apiVersion=4
-    if (modifiedConfig.url && !modifiedConfig.url.includes('apiVersion=4')) {
-        if (modifiedConfig.url.includes('?')) {
-            modifiedConfig.url = `${modifiedConfig.url}&apiVersion=4`;
-        }
-        else {
-            modifiedConfig.url = `${modifiedConfig.url}?apiVersion=4`;
-        }
-    }
+
     return modifiedConfig;
 });
 

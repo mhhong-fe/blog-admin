@@ -14,7 +14,32 @@ declare global {
   const $toRef: typeof import('vue/macros')['$toRef']
   const API: typeof import('./src/api/config/common')['API']
   const API_: typeof import('./src/api/config/common')['API_']
+  const API_A: typeof import('./src/api/config/common')['API_A']
+  const API_ADD_USER: typeof import('./src/api/config/common')['API_ADD_USER']
+  const API_ARTICLES_: typeof import('./src/api/config/common')['API_ARTICLES_']
+  const API_ARTICLES_ADD: typeof import('./src/api/config/common')['API_ARTICLES_ADD']
+  const API_ARTICLES_DELETE: typeof import('./src/api/config/common')['API_ARTICLES_DELETE']
+  const API_ARTICLES_EDIT: typeof import('./src/api/config/common')['API_ARTICLES_EDIT']
+  const API_ARTICLES_Edit: typeof import('./src/api/config/common')['API_ARTICLES_Edit']
+  const API_C: typeof import('./src/api/config/common')['API_C']
+  const API_CATEGORY: typeof import('./src/api/config/common')['API_CATEGORY']
+  const API_CATEGORY_ADD: typeof import('./src/api/config/common')['API_CATEGORY_ADD']
+  const API_CATEGORY_DELETE: typeof import('./src/api/config/common')['API_CATEGORY_DELETE']
+  const API_CATEGORY_E: typeof import('./src/api/config/common')['API_CATEGORY_E']
+  const API_CATEGORY_EDI: typeof import('./src/api/config/common')['API_CATEGORY_EDI']
+  const API_CATEGORY_EDIT: typeof import('./src/api/config/common')['API_CATEGORY_EDIT']
+  const API_CATEGORY_LIST: typeof import('./src/api/config/common')['API_CATEGORY_LIST']
+  const API_Cate: typeof import('./src/api/config/common')['API_Cate']
+  const API_GETARTICLES_DELETE: typeof import('./src/api/config/common')['API_GETARTICLES_DELETE']
+  const API_GETCATEGORY_ADD: typeof import('./src/api/config/common')['API_GETCATEGORY_ADD']
+  const API_GET_ARTICLES_DELETE: typeof import('./src/api/config/common')['API_GET_ARTICLES_DELETE']
+  const API_GET_ARTICLES_LIST: typeof import('./src/api/config/common')['API_GET_ARTICLES_LIST']
+  const API_GET_ARTICLE_LIST: typeof import('./src/api/config/common')['API_GET_ARTICLE_LIST']
   const API_GET_BIND_CHANNEL_LIST_V2: typeof import('./src/api/config/settle')['API_GET_BIND_CHANNEL_LIST_V2']
+  const API_GET_CATEGORY_: typeof import('./src/api/config/common')['API_GET_CATEGORY_']
+  const API_GET_CATEGORY_ADD: typeof import('./src/api/config/common')['API_GET_CATEGORY_ADD']
+  const API_GET_CATEGORY_LI: typeof import('./src/api/config/common')['API_GET_CATEGORY_LI']
+  const API_GET_CATEGORY_LIST: typeof import('./src/api/config/common')['API_GET_CATEGORY_LIST']
   const API_GET_RULE_DETAIL_BY_ID_V2: typeof import('./src/api/config/settle')['API_GET_RULE_DETAIL_BY_ID_V2']
   const API_GET_USER_INFO: typeof import('./src/api/config/common')['API_GET_USER_INFO']
   const API_UPDATE: typeof import('./src/api/config/common')['API_UPDATE']
@@ -22,6 +47,13 @@ declare global {
   const API_UPDATE_USER: typeof import('./src/api/config/common')['API_UPDATE_USER']
   const API_UPDATE_USER_: typeof import('./src/api/config/common')['API_UPDATE_USER_']
   const API_UPDATE_USER_INFO: typeof import('./src/api/config/common')['API_UPDATE_USER_INFO']
+  const API_USER: typeof import('./src/api/config/common')['API_USER']
+  const API_USER_: typeof import('./src/api/config/common')['API_USER_']
+  const API_USER_LOGIN: typeof import('./src/api/config/common')['API_USER_LOGIN']
+  const API_USER_REGI: typeof import('./src/api/config/common')['API_USER_REGI']
+  const API_USER_REGISTER: typeof import('./src/api/config/common')['API_USER_REGISTER']
+  const API__ADD: typeof import('./src/api/config/common')['API__ADD']
+  const API__CATEGORY_LIST: typeof import('./src/api/config/common')['API__CATEGORY_LIST']
   const API__USER_INFO: typeof import('./src/api/config/common')['API__USER_INFO']
   const BizTypeEnum: typeof import('./src/enums/settle')['BizTypeEnum']
   const EffectScope: typeof import('vue')['EffectScope']
@@ -43,10 +75,12 @@ declare global {
   const envD: typeof import('./env.d')['default']
   const eslintConfig: typeof import('./eslint.config.mjs')['default']
   const getActivePinia: typeof import('pinia')['getActivePinia']
+  const getCookie: typeof import('./src/utils/index')['getCookie']
   const getCurrentInstance: typeof import('vue')['getCurrentInstance']
   const getCurrentScope: typeof import('vue')['getCurrentScope']
   const h: typeof import('vue')['h']
   const inject: typeof import('vue')['inject']
+  const interface: typeof import('./src/api/config/common')['interface']
   const isProxy: typeof import('vue')['isProxy']
   const isReactive: typeof import('vue')['isReactive']
   const isReadonly: typeof import('vue')['isReadonly']
@@ -126,8 +160,16 @@ declare module 'vue' {
     readonly $ref: UnwrapRef<typeof import('vue/macros')['$ref']>
     readonly $shallowRef: UnwrapRef<typeof import('vue/macros')['$shallowRef']>
     readonly $toRef: UnwrapRef<typeof import('vue/macros')['$toRef']>
-    readonly API_GET_USER_INFO: UnwrapRef<typeof import('./src/api/config/common')['API_GET_USER_INFO']>
-    readonly API_UPDATE_USER_INFO: UnwrapRef<typeof import('./src/api/config/common')['API_UPDATE_USER_INFO']>
+    readonly API_ARTICLES_ADD: UnwrapRef<typeof import('./src/api/config/common')['API_ARTICLES_ADD']>
+    readonly API_ARTICLES_DELETE: UnwrapRef<typeof import('./src/api/config/common')['API_ARTICLES_DELETE']>
+    readonly API_ARTICLES_EDIT: UnwrapRef<typeof import('./src/api/config/common')['API_ARTICLES_EDIT']>
+    readonly API_CATEGORY_ADD: UnwrapRef<typeof import('./src/api/config/common')['API_CATEGORY_ADD']>
+    readonly API_CATEGORY_DELETE: UnwrapRef<typeof import('./src/api/config/common')['API_CATEGORY_DELETE']>
+    readonly API_CATEGORY_EDIT: UnwrapRef<typeof import('./src/api/config/common')['API_CATEGORY_EDIT']>
+    readonly API_GET_ARTICLE_LIST: UnwrapRef<typeof import('./src/api/config/common')['API_GET_ARTICLE_LIST']>
+    readonly API_GET_CATEGORY_LIST: UnwrapRef<typeof import('./src/api/config/common')['API_GET_CATEGORY_LIST']>
+    readonly API_USER_LOGIN: UnwrapRef<typeof import('./src/api/config/common')['API_USER_LOGIN']>
+    readonly API_USER_REGISTER: UnwrapRef<typeof import('./src/api/config/common')['API_USER_REGISTER']>
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
     readonly ElMessage: UnwrapRef<typeof import('element-plus/es')['ElMessage']>
     readonly GENDER: UnwrapRef<typeof import('./src/enums/settle')['GENDER']>
@@ -143,6 +185,7 @@ declare module 'vue' {
     readonly defineStore: UnwrapRef<typeof import('pinia')['defineStore']>
     readonly effectScope: UnwrapRef<typeof import('vue')['effectScope']>
     readonly getActivePinia: UnwrapRef<typeof import('pinia')['getActivePinia']>
+    readonly getCookie: UnwrapRef<typeof import('./src/utils/index')['getCookie']>
     readonly getCurrentInstance: UnwrapRef<typeof import('vue')['getCurrentInstance']>
     readonly getCurrentScope: UnwrapRef<typeof import('vue')['getCurrentScope']>
     readonly h: UnwrapRef<typeof import('vue')['h']>
@@ -214,8 +257,16 @@ declare module '@vue/runtime-core' {
     readonly $ref: UnwrapRef<typeof import('vue/macros')['$ref']>
     readonly $shallowRef: UnwrapRef<typeof import('vue/macros')['$shallowRef']>
     readonly $toRef: UnwrapRef<typeof import('vue/macros')['$toRef']>
-    readonly API_GET_USER_INFO: UnwrapRef<typeof import('./src/api/config/common')['API_GET_USER_INFO']>
-    readonly API_UPDATE_USER_INFO: UnwrapRef<typeof import('./src/api/config/common')['API_UPDATE_USER_INFO']>
+    readonly API_ARTICLES_ADD: UnwrapRef<typeof import('./src/api/config/common')['API_ARTICLES_ADD']>
+    readonly API_ARTICLES_DELETE: UnwrapRef<typeof import('./src/api/config/common')['API_ARTICLES_DELETE']>
+    readonly API_ARTICLES_EDIT: UnwrapRef<typeof import('./src/api/config/common')['API_ARTICLES_EDIT']>
+    readonly API_CATEGORY_ADD: UnwrapRef<typeof import('./src/api/config/common')['API_CATEGORY_ADD']>
+    readonly API_CATEGORY_DELETE: UnwrapRef<typeof import('./src/api/config/common')['API_CATEGORY_DELETE']>
+    readonly API_CATEGORY_EDIT: UnwrapRef<typeof import('./src/api/config/common')['API_CATEGORY_EDIT']>
+    readonly API_GET_ARTICLE_LIST: UnwrapRef<typeof import('./src/api/config/common')['API_GET_ARTICLE_LIST']>
+    readonly API_GET_CATEGORY_LIST: UnwrapRef<typeof import('./src/api/config/common')['API_GET_CATEGORY_LIST']>
+    readonly API_USER_LOGIN: UnwrapRef<typeof import('./src/api/config/common')['API_USER_LOGIN']>
+    readonly API_USER_REGISTER: UnwrapRef<typeof import('./src/api/config/common')['API_USER_REGISTER']>
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
     readonly ElMessage: UnwrapRef<typeof import('element-plus/es')['ElMessage']>
     readonly GENDER: UnwrapRef<typeof import('./src/enums/settle')['GENDER']>
@@ -231,6 +282,7 @@ declare module '@vue/runtime-core' {
     readonly defineStore: UnwrapRef<typeof import('pinia')['defineStore']>
     readonly effectScope: UnwrapRef<typeof import('vue')['effectScope']>
     readonly getActivePinia: UnwrapRef<typeof import('pinia')['getActivePinia']>
+    readonly getCookie: UnwrapRef<typeof import('./src/utils/index')['getCookie']>
     readonly getCurrentInstance: UnwrapRef<typeof import('vue')['getCurrentInstance']>
     readonly getCurrentScope: UnwrapRef<typeof import('vue')['getCurrentScope']>
     readonly h: UnwrapRef<typeof import('vue')['h']>

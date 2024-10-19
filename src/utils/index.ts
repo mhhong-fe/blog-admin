@@ -11,3 +11,12 @@ export function centToYuan(centValue: number | string | undefined) {
         maximumFractionDigits: 2,
     });
 }
+
+export function getCookie(name: string) {
+    const cookieList = document.cookie.split(';').map((item) => {
+        const arr = item.split('=');
+        return [arr[0], arr[1]];
+    });
+    const cookieArr = cookieList.find(item => item[0] === name);
+    return cookieArr ? cookieArr[1] : undefined;
+}

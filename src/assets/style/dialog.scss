@@ -1,0 +1,23 @@
+.el-dialog {
+    // --ep-dialog-padding-primary 还会用于 + 计算，不能设置为两个值
+    --ep-dialog-title-font-size: var(--ep-font-size-medium) !important;
+    --ep-dialog-padding-primary: 14px;
+}
+
+.el-dialog__header {
+    // 按UI图强行加上 y-padding
+    font-weight: 500;
+    padding: 16px 0;
+}
+
+.el-dialog__body {
+    // 本来UI设计在header上的阴影，由于header默认有右边距，会导致阴影少一点
+    // 所以改到body上，使用inset阴影模拟
+    box-shadow: inset 0px 2px 8px 0px rgb(0 0 0 / 5%);
+    padding: 24px;
+}
+
+.el-dialog__footer {
+    @apply border-t border-neutral-2 py-2.5 #{!important};
+}
+

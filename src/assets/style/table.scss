@@ -1,0 +1,32 @@
+// 普通表格
+#app {
+    .el-table thead {
+        color: #505968;
+        font-weight: 500;
+        background-color: #F4F4F4;
+    }
+
+    .el-table thead th.el-table__cell {
+        background-color: #F4F4F4;
+    }
+
+    .el-table .cell {
+        padding: 0 16px;
+    }
+
+    .el-table td.el-table__cell {
+        padding: 14px 0;
+        border-bottom-color: transparent;
+    }
+    .el-table th.el-table__cell {
+        padding: 8px 0;
+    }
+
+    .el-pagination.is-background .el-pager li.is-active {
+        border-radius: 4px;
+        color: #407FFF;
+        background: #E7EEFF;
+        border: 1px solid #407FFF;
+        font-weight: 400;
+    }
+}
