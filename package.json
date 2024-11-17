@@ -4,8 +4,8 @@
     "version": "0.0.0",
     "private": true,
     "scripts": {
-        "dev": "vite --mode microdev --host",
-        "build": "vite build --mode production",
+        "start": "vite --host",
+        "build": "vite build",
         "build:dev": "vite build --mode dev",
         "build:test": "vite build --mode test",
         "build:prod": "vite build --mode production",

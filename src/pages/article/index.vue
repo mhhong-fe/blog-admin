@@ -53,7 +53,7 @@ async function search() {
             pageNum: pageDto.value.pageNum,
             pageSize: pageDto.value.pageSize,
         }));
-        list.value = res.data.data;
+        list.value = res.data.data.sort((prev, next) => next.updatedTime - prev.updatedTime);
         pageDto.value.total = res.data.pageDto?.total as number;
     }
     finally {
