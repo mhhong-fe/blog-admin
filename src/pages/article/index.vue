@@ -8,6 +8,9 @@
                 <el-button type="primary" @click="handleAdd">
                     新增
                 </el-button>
+                <el-button type="primary" :loading="exportLoading" @click="handleExport">
+                    导出文章
+                </el-button>
             </el-form-item>
         </el-form>
         <Table v-loading="loading" :list="list" @delete="handleDelete" @edit="handleEdit" />
@@ -39,6 +42,7 @@ const pageDto = ref({
 const drawerVisible = ref(false);
 const list = ref([] as ArticlesRow[]);
 const loading = ref(false);
+const exportLoading = ref(false);
 
 const selectedRow = ref({} as (ArticlesRow | undefined));
 function handleAdd() {
@@ -71,8 +75,20 @@ function handleEdit(row: ArticlesRow) {
     drawerVisible.value = true;
 }
 
+function handleExport() {
+    ElMessage.warning('功能开发中');
+}
+
 onMounted(() => {
     search();
+});
+
+watch([() => pageDto.value.pageNum, () => pageDto.value.pageSize], async () => {
+    const res = await request(API_GET_ARTICLE_LIST({
+        pageNum: pageDto.value.pageNum,
+        pageSize: pageDto.value.pageSize,
+    }));
+    list.value = res.data.data;
 });
 </script>
 
