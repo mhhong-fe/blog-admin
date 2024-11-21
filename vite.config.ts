@@ -39,11 +39,14 @@ export default defineConfig({
     server: {
         port: 5001,
         proxy: {
-            '/api': {
+            '/blogApi': {
                 target: 'http://localhost:4000',
                 changeOrigin: true,
-                rewrite: path => path.replace(/^\/api/, ''), // 可选: 修改路径
+                rewrite: path => path.replace(/^\/blogApi/, ''), // 可选: 修改路径
             },
         },
+    },
+    build: {
+        assetsDir: 'blogAdmin/assets',
     },
 });

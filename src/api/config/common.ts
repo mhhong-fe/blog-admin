@@ -11,7 +11,7 @@ export interface UserPayload {
  */
 export function API_USER_REGISTER(data: UserPayload): ARC<CommonResponseData<boolean>> {
     return {
-        url: '/api/user/register',
+        url: '/blogApi/user/register',
         method: 'post',
         data,
     };
@@ -22,7 +22,7 @@ export function API_USER_REGISTER(data: UserPayload): ARC<CommonResponseData<boo
  */
 export function API_USER_LOGIN(data: UserPayload): ARC<CommonResponseData<boolean>> {
     return {
-        url: '/api/user/login',
+        url: '/blogApi/user/login',
         method: 'post',
         data,
     };
@@ -41,7 +41,7 @@ export interface CategoryPayload {
  */
 export function API_CATEGORY_ADD(data: CategoryPayload): ARC<CommonResponseData<boolean>> {
     return {
-        url: '/api/category/add',
+        url: '/blogApi/category/add',
         method: 'post',
         data,
     };
@@ -52,7 +52,7 @@ export function API_CATEGORY_ADD(data: CategoryPayload): ARC<CommonResponseData<
  */
 export function API_CATEGORY_EDIT(data: CategoryPayload): ARC<CommonResponseData<boolean>> {
     return {
-        url: '/api/category/edit',
+        url: '/blogApi/category/edit',
         method: 'post',
         data,
     };
@@ -69,7 +69,7 @@ export interface CategoryRow {
  */
 export function API_GET_CATEGORY_LIST(): ARC<CommonResponseData<CategoryRow[]>> {
     return {
-        url: '/api/category/list',
+        url: '/blogApi/category/list',
         method: 'get',
     };
 }
@@ -79,7 +79,7 @@ export function API_GET_CATEGORY_LIST(): ARC<CommonResponseData<CategoryRow[]>> 
  */
 export function API_CATEGORY_DELETE(id: number): ARC<CommonResponseData<CategoryRow[]>> {
     return {
-        url: '/api/category/delete',
+        url: '/blogApi/category/delete',
         method: 'post',
         data: { id },
     };
@@ -105,7 +105,7 @@ export interface ArticlesRow extends EditArticlesPayload {
  */
 export function API_ARTICLES_ADD(data: EditArticlesPayload): ARC<CommonResponseData<boolean>> {
     return {
-        url: '/api/article/add',
+        url: '/blogApi/article/add',
         method: 'post',
         data,
     };
@@ -116,7 +116,7 @@ export function API_ARTICLES_ADD(data: EditArticlesPayload): ARC<CommonResponseD
  */
 export function API_ARTICLES_EDIT(data: EditArticlesPayload): ARC<CommonResponseData<boolean>> {
     return {
-        url: '/api/article/edit',
+        url: '/blogApi/article/edit',
         method: 'post',
         data,
     };
@@ -127,7 +127,7 @@ export function API_ARTICLES_EDIT(data: EditArticlesPayload): ARC<CommonResponse
  */
 export function API_ARTICLES_DELETE(id: number): ARC<CommonResponseData<boolean>> {
     return {
-        url: '/api/article/delete',
+        url: '/blogApi/article/delete',
         method: 'post',
         data: { id },
     };
@@ -148,7 +148,7 @@ interface GetArticleListPayload extends PageDto {
  */
 export function API_GET_ARTICLE_LIST(data: GetArticleListPayload): ARC<CommonResponseData<ArticlesRow[]>> {
     return {
-        url: '/api/article/list',
+        url: '/blogApi/article/list',
         method: 'post',
         data,
     };
