@@ -30,6 +30,7 @@ import AvatarImg from '@/assets/imgs/avatar.png';
 const titleList = [
     { name: '文章', route: '/article' },
     { name: '分类', route: '/category' },
+    { name: '统计', route: '/time-log' },
     { name: '网站概况', route: '/data' },
 ];
 
