@@ -33,7 +33,7 @@ const { month } = defineProps<{
 const days = dayjs(month).endOf('month');
 const dayCount = days.date();
 const gridCount = Array.from({ length: dayCount }, (item, index) => {
-    const day = String(index).padStart(2, 0);
+    const day = String(index + 1).padStart(2, 0);
     const date = `${month}-${day}`;
     return date;
 });
@@ -41,19 +41,33 @@ const gridCount = Array.from({ length: dayCount }, (item, index) => {
 const logData = inject('logData') as LogData;
 
 // 本月第一天是周几
-const startDayOfWeek = ref(new Date(month).getDay());
-const emptyGridList = Array.from({ length: startDayOfWeek.value - 1 }, (item, index) => `empty-${index}`);
+const startDayOfWeek = dayjs(month).startOf('month').day() || 7;
+const emptyGridList = Array.from({ length: startDayOfWeek - 1 }, (item, index) => `empty-${index}`);
 
 function getBgClass(date: string) {
     const level = logData[date]?.level;
     return `color-level-${level}`;
 }
-
-function getTooltipText(date: string) {
-    return logData[date]?.content;
-}
 </script>
 
 <style scoped>
+.color-level-0 {
+    background-color: #ebedf0;
+}
 
+.color-level-1 {
+    background-color: #eef5fe;
+}
+
+.color-level-2 {
+    background-color: #dcebfd;
+}
+
+.color-level-3 {
+    background-color: #cbe1fc;
+}
+
+.color-level-4 {
+    background-color: #88b;
+}
 </style>

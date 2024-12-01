@@ -14,18 +14,20 @@
 <script setup lang="ts">
 import Month from './month.vue';
 
-const { year } = defineProps<{
+const props = defineProps<{
     year: string;
 }>();
 
 const daysInWeek = ['周一', '周二', '周三', '周四', '周五', '周六', '周日'];
 
-const monthList = Array.from({ length: 12 }, (item, index) => {
-    const monthStr = `${index + 1}`.padStart(2, 0);
-    return {
-        key: `month-${index}`,
-        month: `${year}-${monthStr}`,
-    };
+const monthList = computed(() => {
+    return Array.from({ length: 12 }, (item, index) => {
+        const monthStr = `${index + 1}`.padStart(2, 0);
+        return {
+            key: `${props.year}-month-${index}`,
+            month: `${props.year}-${monthStr}`,
+        };
+    });
 });
 </script>
 
